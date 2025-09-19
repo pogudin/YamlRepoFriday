@@ -6,3 +6,15 @@ def test_hello_returns_none():
 
 def test_bye_returns_none():
     assert bye() is None
+
+def test_hello_prints_expected_message(capsys):
+    hello()
+    captured = capsys.readouterr()
+    assert captured.out.strip() == "Hello DevOps!"
+
+
+def test_bye_prints_expected_message(capsys):
+    bye()
+    captured = capsys.readouterr()
+    assert captured.out.strip() == "Good bye!"
+
